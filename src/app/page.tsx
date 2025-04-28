@@ -1,18 +1,7 @@
 'use client'
-import { SessionProvider } from "next-auth/react";
-import Home from "./home";
 
+import { redirect } from "next/navigation";
 
-export default function Public({
-  session,
-}: {
-  children: React.ReactNode,
-  session: any
-}){
-
-  return (
-    <SessionProvider session={session}>
-      <Home />
-    </SessionProvider>
-  );
+export default function Public() {
+  return redirect('/dashboard')
 }
